@@ -1,0 +1,76 @@
+{
+  "resourceType": "Bundle",
+  "type": "batch",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "44996586",
+        "name": [
+          {
+            "use": "official",
+            "family": "Gandhi",
+            "given": ["Mohandas"]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1869-10-02"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/44996586"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "44996587",
+        "name": [
+          {
+            "family": "Nehru",
+            "given": ["Jawaharlal"]
+          }
+        ],
+        "gender": "male"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/44996587"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "44996588",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body Weight"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/44996586"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/44996587"
+          }
+        ],
+        "valueQuantity": {
+          "value": 55,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation/44996588"
+      }
+    }
+  ]
+}
